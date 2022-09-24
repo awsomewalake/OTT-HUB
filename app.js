@@ -1,6 +1,8 @@
 const express = require("express")
 const ejsMate = require('ejs-mate')
 const path = require('path')
+const axios = require('axios').default;
+const fs = require('fs');
 const app = express();
 app.use(express.static(path.join(__dirname, 'Client')));
 app.use(express.urlencoded({ extended: true }))
@@ -10,65 +12,62 @@ app.set('views', path.join(__dirname, '/Client/views'));
 var methodOverride = require('method-override')
 app.use(methodOverride('_method'));
 
-// axios.get('https://ott-details.p.rapidapi.com/advancedsearch', {
-//         params: {}
-//     })
-//     .then(function(response) {
-//         //
 
-//     })
-//     .catch(function(error) {
-//         console.log('error');
-//     })
-
-
-const search = {
-    genre: "action",
-    language: "english",
-    type: "movie",
-}
-
+// Home Route Get Request
 app.get("/", (req, res) => {
     res.render("form.ejs")
 })
 
-app.post("/", async(req, res) => {
-    const { search } = req.body
-    console.log(search)
-    res.send("Posted")
-})
-
+// Home Route Post Request
 app.post('/', (req, res) => {
-    // const {search}=req.body;
+    const { search } = req.body;
 
-    if (typeof seacrh === 'string' || search instanceof String) {
-        const s = search;
+    console.log("Search[genre]1 :: ", search.genre);
+
+    if (typeof search.genre === 'string' || search.genre instanceof String) {
+        var s = search.genre;
     }
     else {
-        const s = "";
-        for (let i of search) {
+        var s = "";
+        for (let i of search.genre) {
             // console.log(i);
+
             s = s.concat(",", i.toLowerCase());
+
         }
+        s = s.substring(1);
     }
+    search.genre = s;
+    console.log("Search[genre]2 :: ", search.genre);
+    // Number(search[min_idbm]);
+    // min_idbm
 
-    axios.get('https://ott-details.p.rapidapi.com/advancedsearch', {
+    // console.log("Search :: ", search);
+
+    const options = {
+        method: 'GET',
+        url: 'https://ott-details.p.rapidapi.com/advancedsearch',
         params: {
-            search: s
+            search: search
+        },
+        headers: {
+            'X-RapidAPI-Key': '03ffe1cadcmshe653975363c53a4p1ffa00jsn7d40601cb65f',
+            'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
         }
-    })
-        .then(function (response) {
-            // console.log(response.data);
-            // { ques } = responce.data;
-            const { data } = response;
-            const dataJSON = JSON.stringify(data);
-            fs.writeFileSync('data.json', dataJSON);
-            res.render('home.ejs', { data: data });
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+    };
 
+    // axios.request(options).then(function (response) {
+    //     const { data } = response;
+
+    //     // console.log("data :: ", data);
+    //     const dataJSON = JSON.stringify(data);
+    //     fs.writeFileSync('data.json', dataJSON);
+
+    // }).catch(function (error) {
+    //     console.error(error);
+    // });
+
+    res.render("home.ejs");
 })
 
 app.listen(3000, () => {
