@@ -39,35 +39,9 @@ app.post("/", async(req, res) => {
 })
 
 app.post('/', (req, res) => {
-    // const {search}=req.body;
-
-    if (typeof seacrh === 'string' || search instanceof String) {
-        const s = search;
-    }
-    else {
-        const s = "";
-        for (let i of search) {
-            // console.log(i);
-            s = s.concat(",", i.toLowerCase());
-        }
-    }
-
-    axios.get('https://ott-details.p.rapidapi.com/advancedsearch', {
-        params: {
-            search: s
-        }
-    })
-        .then(function (response) {
-            // console.log(response.data);
-            // { ques } = responce.data;
-            const { data } = response;
-            const dataJSON = JSON.stringify(data);
-            fs.writeFileSync('data.json', dataJSON);
-            res.render('home.ejs', { data: data });
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+    const { search } = req.body;
+    console.log(search)
+    res.send("posted")
 
 })
 
