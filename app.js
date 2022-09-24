@@ -9,9 +9,26 @@ app.set('views', path.join(__dirname, '/Client/views'));
 var methodOverride = require('method-override')
 app.use(methodOverride('_method'));
 
+// axios.get('https://ott-details.p.rapidapi.com/advancedsearch', {
+//         params: {}
+//     })
+//     .then(function(response) {
+//         //
+
+//     })
+//     .catch(function(error) {
+//         console.log('error');
+//     })
+
 
 app.get("/", (req, res) => {
-    res.render("home.ejs")
+    res.render("form.ejs")
+})
+
+app.post("/", async(req, res) => {
+    const { search } = req.body
+    console.log(search)
+    res.send("Posted")
 })
 
 app.listen(3000, () => {

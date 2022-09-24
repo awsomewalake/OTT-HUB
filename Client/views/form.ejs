@@ -1,0 +1,57 @@
+<% layout('/layouts/boilerplate') %>
+    <div class="row">
+
+        <div class="col-6 offset-3">
+            <div class="card p-3 text-dark px-5">
+                <h1 class="card-title text-center mb-4">Search</h1>
+                <form class="" action="/" method="POST">
+                    <div class="form-group d-flex flex-column align-items-center mb-3">
+                        <label>Select Genre</label>
+                        <div class="row">
+                            <div class="form-check col">
+                                <input class="form-check-input" id="Action" type="checkbox" name="search[genre]" value="Action" checked="checked">
+                                <label for="Action">Action</label>
+                            </div>
+                            <div class="form-check col">
+                                <input class="form-check-input" id="Adventure" type="checkbox" name="search[genre]" value="Adventure">
+                                <label for="Adventure">Adventure</label>
+                            </div>
+                            <div class="form-check col">
+                                <input class="form-check-input" id="Animation" type="checkbox" name="search[genre]" value="Animation">
+                                <label for="Animation">Animation</label>
+                            </div>
+                            <div class="form-check col">
+                                <input class="form-check-input" id="Comedy" type="checkbox" name="search[genre]" value="Comedy">
+                                <label for="Comedy">Comedy</label>
+                            </div>
+                            <div class="form-check col">
+                                <input class="form-check-input" id="Drama" type="checkbox" name="search[genre]" value="Drama">
+                                <label for="Drama">Drama</label>
+                            </div>
+
+                            <div class="form-check col">
+                                <input class="form-check-input" id="Horror" type="checkbox" name="search[genre]" value="Horror">
+                                <label for="Horror">Horror</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex flex-column align-items-center mb-3">
+                        <label class="mb-1">Select Type</label>
+                        <div class="form-check">
+                            <input class="form-check-input" id="movie" type="radio" value="movie" name="search[type]" required="required" checked=true>
+                            <label class="form-check-label" for="movie">Movie</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="show" type="radio" value="show" name="search[type]" required="required">
+                            <label class="form-check-label" for="show">Show</label>
+                        </div>
+
+                    </div>
+
+                    <button class="w-100 m-0 btn btn-outline-dark" type="submit">START</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
