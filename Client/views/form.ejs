@@ -5,94 +5,129 @@
             <div class="card p-3 text-dark px-5">
                 <h1 class="card-title text-center mb-4">Search</h1>
                 <form class="" action="/" method="POST">
-                    <div class="form-group d-flex flex-column align-items-center mb-3">
+                    <div class="form-group d-flex flex-column align-items-center
+                        mb-3">
                         <label>Select Genre</label>
                         <div class="row">
                             <div class="form-check col">
-                                <input class="form-check-input" id="Action" type="checkbox" name="search[genre]" value="Action" checked="checked">
+                                <input class="form-check-input" id="Action"
+                                    type="checkbox" name="search[genre]"
+                                    value="Action" checked="checked">
                                 <label for="Action">Action</label>
                             </div>
                             <div class="form-check col">
-                                <input class="form-check-input" id="Adventure" type="checkbox" name="search[genre]" value="Adventure">
+                                <input class="form-check-input" id="Adventure"
+                                    type="checkbox" name="search[genre]"
+                                    value="Adventure">
                                 <label for="Adventure">Adventure</label>
                             </div>
                             <div class="form-check col">
-                                <input class="form-check-input" id="Animation" type="checkbox" name="search[genre]" value="Animation">
+                                <input class="form-check-input" id="Animation"
+                                    type="checkbox" name="search[genre]"
+                                    value="Animation">
                                 <label for="Animation">Animation</label>
                             </div>
                             <div class="form-check col">
-                                <input class="form-check-input" id="Comedy" type="checkbox" name="search[genre]" value="Comedy">
+                                <input class="form-check-input" id="Comedy"
+                                    type="checkbox" name="search[genre]"
+                                    value="Comedy">
                                 <label for="Comedy">Comedy</label>
                             </div>
                             <div class="form-check col">
-                                <input class="form-check-input" id="Drama" type="checkbox" name="search[genre]" value="Drama">
+                                <input class="form-check-input" id="Drama"
+                                    type="checkbox" name="search[genre]"
+                                    value="Drama">
                                 <label for="Drama">Drama</label>
                             </div>
 
                             <div class="form-check col">
-                                <input class="form-check-input" id="Horror" type="checkbox" name="search[genre]" value="Horror">
+                                <input class="form-check-input" id="Horror"
+                                    type="checkbox" name="search[genre]"
+                                    value="Horror">
                                 <label for="Horror">Horror</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group d-flex flex-column align-items-center mb-3">
+                    <div class="form-group d-flex flex-column align-items-center
+                        mb-3">
                         <label class="mb-1">Select Type</label>
                         <div class="form-check">
-                            <input class="form-check-input" id="movie" type="radio" value="movie" name="search[type]" required="required" checked=true>
+                            <input class="form-check-input" id="movie"
+                                type="radio" value="movie" name="search[type]"
+                                required="required" checked=true>
                             <label class="form-check-label" for="movie">Movie</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" id="show" type="radio" value="show" name="search[type]" required="required">
+                            <input class="form-check-input" id="show"
+                                type="radio" value="show" name="search[type]"
+                                required="required">
                             <label class="form-check-label" for="show">Show</label>
                         </div>
 
                     </div>
 
-                    <div class="form-group d-flex flex-column align-items-center mb-3">
+                    <div class="form-group d-flex flex-column align-items-center
+                        mb-3">
                         <label for="formControlRange">Minimum IDBM Rating</label>
-                        <input type="range" class="form-control-range" name="search[min_idbm]" id="formControlRange" min="0" max="10" step="0.5" onInput="$('#rangeval').html($(this).val())">
+                        <input type="range" class="form-control-range"
+                            name="search[min_idbm]" id="formControlRange"
+                            min="0" max="10" step="0.5"
+                            onInput="$('#rangeval').html($(this).val())">
                         <span id="rangeval">5</span>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label class="d-flex flex-column align-items-center mb-1 ">Start Year</label>
+                        <label class="d-flex flex-column align-items-center mb-1
+                            ">Start Year</label>
                         <div class="q-elements">
-                            <select class="form-control text-center" name="search[start_year]">
-                            <option>1970</option>
-                            <option>1980</option>
-                            <option>1990</option>
-                            <option>2000</option>
-                            <option>2010</option>
-                            <option>2020</option>
-                        </select>
+                            <select class="form-control text-center"
+                                name="search[start_year]">
+                                <option>1970</option>
+                                <option>1980</option>
+                                <option>1990</option>
+                                <option>2000</option>
+                                <option>2010</option>
+                                <option>2020</option>
+                            </select>
                         </div>
                     </div>
 
 
                     <div class="form-group mb-3">
-                        <label class="d-flex flex-column align-items-center mb-1 ">Sort Method</label>
+                        <label class="d-flex flex-column align-items-center mb-1
+                            ">Sort Method</label>
                         <div class="q-elements">
-                            <select class="form-control text-center" name="search[sort]">
-                            <option value="highestrated">Highest Rated</option>
-                            <option value="lowestrated">Lowest Rated</option>
-                            <option value="latest">Latest</option>
-                            <option value="oldest">Oldest</option>
-                        </select>
+                            <select class="form-control text-center"
+                                name="search[sort]">
+                                <option value="highestrated">Highest Rated</option>
+                                <option value="lowestrated">Lowest Rated</option>
+                                <option value="latest">Latest</option>
+                                <option value="oldest">Oldest</option>
+                            </select>
                         </div>
                     </div>
 
 
 
-                    <button class="w-100 m-0 btn btn-outline-dark" type="submit">START</button>
+                    <button class="w-100 m-0 btn btn-outline-dark"
+                        type="submit">START</button>
 
                 </form>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous">
     </script>
