@@ -1,0 +1,34 @@
+.aaa{
+    font-size: 20px;
+    color: blue;
+}
+h1{
+    color: blue;
+}
+/* h2{
+    color: blue;
+} */
+
+body{
+    background-color: black;
+}
+
+.card{
+    /* background-color: black; */
+    margin: 5px;
+    border: 2px solid red;
+  border-radius: 3px;
+}
+
+.heading{
+    color: red;
+}
+
+.homecategory{
+    font-family: 'montserrat-light';
+    font-size: 1.2rem;
+    background-color: black;
+    color: red;
+    text-decoration: none;
+    padding: 18px;
+}
